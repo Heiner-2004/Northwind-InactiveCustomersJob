@@ -1,0 +1,1 @@
+-- Script para crear la tabla de clientes inactivos 
