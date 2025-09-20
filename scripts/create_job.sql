@@ -15,3 +15,5 @@ END
 
 -- insertar los cientes inactivos 
 INSERT INTO InactiveCustomersLog (CustomerID, CompanyName, ContactName, LastDate)
+SELECT
+C.
