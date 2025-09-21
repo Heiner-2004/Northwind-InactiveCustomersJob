@@ -16,3 +16,4 @@ Customers.CompanyName,
 Customers.ContactName,
 MAX(Orders.OrderDate) AS LastDate -- este lastdate cambia de acuerdo a como se llame la fecha del ultimo pedido en la clase de los inactivos 
 FROM Customers
+INNER JOIN  Orders ON Customers.CustomerID = Orders.CustomerID
