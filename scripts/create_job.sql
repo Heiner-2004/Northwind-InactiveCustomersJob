@@ -1,12 +1,7 @@
-
---creo una tablaba para enteder 
 USE Northwind2025;
 GO
-IF NOT EXISTS (
-	SELECT 1
-	FROM INFORMATION_SCHEMA.TABLES
-	WHERE TABLE_NAME = 'InactiveCustomersLog'
-	)
+--creo una tabla 
+
 	
 --hay que hacer la clase InactiveCustomersLog
 BEGIN	
@@ -15,3 +10,9 @@ END
 
 -- insertar los cientes inactivos 
 INSERT INTO InactiveCustomersLog (CustomerID, CompanyName, ContactName, LastDate)
+SELECT
+Customers.CustomerID,
+Customers.CompanyName,
+Customers.ContactName,
+MAX(Orders.OrderDate) AS LastDate -- este lastdate cambia de acuerdo a como se llame la fecha del ultimo pedido en la clase de los inactivos 
+FROM Customers
