@@ -19,7 +19,7 @@ FROM Customers
 INNER JOIN  Orders ON Customers.CustomerID = Orders.CustomerID
 GROUP BY Customers.CustomerID, Customers.CompanyName, Customers.ContactName
 
-/*=======================*/
+/*===================================*/
 
 -- Crear el job
 EXEC msdb.dbo.sp_add_job
